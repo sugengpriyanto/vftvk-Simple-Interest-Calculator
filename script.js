@@ -19,9 +19,8 @@ function compute()
     
     if (amount <= 0) {
         // show validation notice
-        document.getElementById('amountVal').classList.remove('hidden')
+        alert('Please input positive number')
     } else {
-        document.getElementById('amountVal').classList.add('hidden')
         document.getElementById('amount').innerText = amount
         document.getElementById('rateValue').innerText = rate
         document.getElementById('result').innerText = result
