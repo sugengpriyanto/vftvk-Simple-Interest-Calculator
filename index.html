@@ -4,13 +4,46 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div id="container">
+            <div class="header">
+                <h1>Simple Interest Calculator</h1>
+            </div>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td>Amount</td>
+                        <td>
+                            <input type="number" required id="principal">
+                            <p id="amountVal" class="hidden">Please input positive number</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Interest Rate 
+                        </td>
+                        <td>
+                            <input type="range" value="0" min="0" max="100" step="0.1" id="rate" onchange="updateTextInput(this.value)"> <span id="range">0</span>%
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>No. of Years</td>
+                        <td>
+                            <input type="number"  id="years">
+                        </td>
+                    </tr>
+                </table>
+                <button onclick="compute()">Compute Interest</button>
+    
+                <div class="results hidden" id="results">
+                    <p>If you deposit <span id="amount">amount</span> </p>
+                    <p>at an interest rate of <span id="rateValue">rate</span>%</p>
+                    <p>You will receive an amount of <span id="result">result</span></p>
+                    <p>in the year of <span id="year">year</span></p>
+                </div>  
+            </div>            
+            <div class="footer">
+               <p>&copy; Everyone Can Get Rich</p>
+            </div>      
+        </div>
     </body>
 </html>
